@@ -33,12 +33,14 @@ thread_no10_alpha = 0.1
 
 
 
-with open('skill.json', 'r') as data:
+"""with open('skill.json', 'r') as data:
     js = data.readline()
     skill = json.loads(js)
+"""
+ori_skill = {"Amelie": 0.8366212169577047, "Luis": 2.104361969696902, "Jakob": 4.9532969056198315, "Steve": 8.390741538605264, "Simon": 4.981467829188162, "Uschi": 8.80846758109774, "Michael": 4.729392044659287, "Felix": 3.487896346604442, "Anna": 6.12492068554967, "Lilly": 6.900072328046286}
 
-skill = {k: v for k, v in sorted(skill.items(), key=lambda item: item[1], reverse=True)}
-
+ori_skill = {k: v for k, v in sorted(ori_skill.items(), key=lambda item: item[1], reverse=True)}
+skill = ori_skill.copy()
 filename = ("plots/alpha_%s_beta_%s_%s_gamma_iter_%s" % (alpha*100, beta*100,gamma*100,iterations)).replace(".", "_")
 filenamepoints = ("plots/alpha_%s_beta_%s_iter_%s_points" % (alpha*100, beta*100,iterations)).replace(".", "_")
 
@@ -176,6 +178,7 @@ def multi_threading(threadnum,alpha_start):
     vector = 10
     alpha = alpha_start
     while True:
+        skill = ori_skill.copy()
         if (vector > 3):
             export = {}
 
