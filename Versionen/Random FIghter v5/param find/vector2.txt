@@ -1,0 +1,15 @@
+
+3. Thread
+Alpha 0.03
+Beta 0.049
+Gamma 0.01
+Iter 10000
+Tol 90
+Vector 2.449489742783178
+1. Thread
+Alpha 0.01
+Beta 0.012000000000000004
+Gamma 0.01
+Iter 10000
+Tol 40
+Vector 2.0
